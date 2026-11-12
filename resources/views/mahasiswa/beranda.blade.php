@@ -1,9 +1,9 @@
 @extends('layout.master')
 @section('header')
-    <h2>Beranda</h2>
+    <h2>TESTING</h2>
 @endsection
 @section('title')
-    
+
 @endsection
 @section('card-header')
     <h3></h3>
