@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AslabController;
 use App\Http\Controllers\MahasiswaController;
 
@@ -10,4 +11,4 @@ Route::get('/', function () {
 });
 Route::get('beranda',[MahasiswaController::class, 'beranda']);
 Route::get('pengajuan',[AslabController::class, 'pengajuan']);
-Route::
+Route::get('akun',[AdminController::class, 'akun']);
