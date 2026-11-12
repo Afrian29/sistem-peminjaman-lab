@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('header')
-    <h2>TESTING 2</h2>
+    <h2>Bibibibibibi</h2>
 @endsection
 @section('title')
 
