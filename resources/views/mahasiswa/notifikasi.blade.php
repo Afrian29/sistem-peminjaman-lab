@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('header')
-    <h2>Notifikasi</h2>
+    <h2>Notifikasi Gila Kamu</h2>
 @endsection
 
 @section('title', 'Notifikasi Pengguna')
