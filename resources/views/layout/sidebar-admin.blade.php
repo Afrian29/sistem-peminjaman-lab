@@ -9,15 +9,3 @@
         <p>Jadwal Tetap</p>
     </a>
 </li>
-<li class="nav-item">
-    <a href="#" class="nav-link">
-        <i class="nav-icon bi bi-hdd-stack-fill"></i>
-        <p>Data Lab</p>
-    </a>
-</li>
-<li class="nav-item">
-    <a href="#" class="nav-link">
-        <i class="nav-icon bi bi-clock-history"></i>
-        <p>Riwayat</p>
-    </a>
-</li>
