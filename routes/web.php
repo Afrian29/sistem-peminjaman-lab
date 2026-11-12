@@ -10,3 +10,4 @@ Route::get('/', function () {
 });
 Route::get('beranda',[MahasiswaController::class, 'beranda']);
 Route::get('pengajuan',[AslabController::class, 'pengajuan']);
+Route::
