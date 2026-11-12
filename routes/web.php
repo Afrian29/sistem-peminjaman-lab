@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('beranda',[MahasiswaController::class, 'beranda']);
+// Route::get('beranda',[MahasiswaController::class, 'beranda']);
 Route::get('pengajuan',[AslabController::class, 'pengajuan']);
-Route::
+
+Route::get('/beranda', [MahasiswaController::class, 'beranda'])->name('beranda');
+Route::get('/riwayat', [MahasiswaController::class, 'riwayat'])->name('riwayat');
+Route::get('/status-lab', [MahasiswaController::class, 'statusLab'])->name('status-lab');
+Route::get('/notifikasi', [MahasiswaController::class, 'notifikasi'])->name('notifikasi');
+Route::get('/akun', [MahasiswaController::class, 'akun'])->name('akun');
