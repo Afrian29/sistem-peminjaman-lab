@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\AslabController;
+use App\Http\Controllers\MahasiswaController;
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('user',[UserController::class, 'dashboard']);
+Route::get('beranda',[MahasiswaController::class, 'beranda']);
+Route::get('pengajuan',[AslabController::class, 'pengajuan']);
