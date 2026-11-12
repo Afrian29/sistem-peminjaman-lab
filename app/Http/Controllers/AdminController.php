@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function a
+    public function akun(){
+        $roleAktif = 'admin';
+        return view('akun', [ 'role' => $roleAktif]);
+    }
 }

@@ -17,7 +17,7 @@
 </li>
 <li class="nav-item">
     <a href="#" class="nav-link">
-        <i class="nav-icon bi bi-clock-history"></i>
+        <i class="nav-icon bi bi-bell"></i>
         <p>Notifikasi</p>
     </a>
 </li>
