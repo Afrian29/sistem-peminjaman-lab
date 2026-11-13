@@ -10,7 +10,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 //ADMIN
-
+Route::get('/akun-admin', [AdminController::class, 'akun'])->name('akun');
 
 //ASLAB
 Route::get('/pengajuan', [AslabController::class, 'pengajuan'])->name('pengajuan');
