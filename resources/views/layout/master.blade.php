@@ -45,7 +45,7 @@
             font-weight: 400 !important;
         }
     </style>
-    <title>Laboratiorium JTIF UNG</title>
+  <title>Laboratiorium JTIF UNG</title>
 
 </head>
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">

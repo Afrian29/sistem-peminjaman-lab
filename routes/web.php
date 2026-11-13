@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AslabController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MahasiswaController;
 
 use Illuminate\Support\Facades\Route;
@@ -8,9 +9,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::get('beranda',[MahasiswaController::class, 'beranda']);
-Route::get('pengajuan',[AslabController::class, 'pengajuan']);
+//ADMIN
 
+
+//ASLAB
+Route::get('/pengajuan', [AslabController::class, 'pengajuan'])->name('pengajuan');
+
+//MAHASISWA
 Route::get('/beranda', [MahasiswaController::class, 'beranda'])->name('beranda');
 Route::get('/riwayat', [MahasiswaController::class, 'riwayat'])->name('riwayat');
 Route::get('/status-lab', [MahasiswaController::class, 'statusLab'])->name('status-lab');

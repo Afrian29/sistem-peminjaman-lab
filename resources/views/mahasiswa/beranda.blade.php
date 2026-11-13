@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('header')
-    <h2>4 TAHUN LOH BOOL AKU SEPI KAMU GA ISI</h2>
+    <h2>Beranda</h2>
 @endsection
 
 @section('title')
