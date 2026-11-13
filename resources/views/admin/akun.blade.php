@@ -5,8 +5,13 @@
 @section('title')
     
 @endsection
+
 @section('card-header')
-    <table>
+
+    
+@endsection
+@section('card-body')
+    <table border="0" class="table">
         <thead>
             <tr>
                 <th>Nama</th>
@@ -19,19 +24,17 @@
                 <th>Aksi</th>
             </tr>
         </thead>
+        <tbody>
+            <tr>
+                <td>Rian</td>
+                <td>rrianafriansyah@gmail.com</td>
+                <td>531424008</td>
+                <td>Kamen Rider Wizard</td>
+                <td>Sistem Informasi</td>
+                <td>Kelas A</td>
+                <td>Aktif</td>
+                <td>Hapus | Edit</td>
+            </tr>
+        </tbody>
     </table>
-@endsection
-@section('card-body')
-    <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </tbody>
 @endsection
