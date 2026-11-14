@@ -65,15 +65,27 @@ class LabController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $lab = Lab::findOrFail($id);
+        $roleAktif = 'aslab';
+        return view('aslab.lab', compact('lab', 'roleAktif'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Lab $lab)
     {
-        //
+        $validated = $request->validate([
+            'kode_lab'  => ['required', 'string', 'max:50'],
+            'nama_lab'  => ['required', 'string', 'max:255'],
+            'lokasi'    => ['required', 'string', 'max:255'],
+            'kapasitas' => ['required', 'integer', 'min:1'],
+            'fasilitas' => ['required', 'string'],
+        ]);
+
+        $lab->update($validated);
+
+        return back()->with('success', 'Data lab diperbarui.');
     }
 
     /**
