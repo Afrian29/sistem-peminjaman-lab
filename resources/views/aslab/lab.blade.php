@@ -164,7 +164,7 @@
 
     <!-- Modal untuk hapus data lab  -->
     <div class="modal fade" id="DeleteModal" tabindex="-1" data-bs-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog">
             <form id="deleteForm" action="" method="POST" class="modal-content">
                 @csrf
                 @method('DELETE')
