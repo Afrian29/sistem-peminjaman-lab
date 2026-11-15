@@ -19,7 +19,7 @@ class RegisterController extends Controller
         'password'       => 'required|string|min:8|confirmed', 
         'no_wa'          => 'required|numeric|digits_between:10,15',
         'kelas_jurusan'  => 'required|string|max:100',
-        'role'           => 'required|in:mahasiswa,aslab',
+        'role'           => 'required|in:Mahasiswa,Asisten Lab',
         ]);
         User::create($dataMhs);
         return redirect('/login')->with('success','Registrasi anda Sukses');

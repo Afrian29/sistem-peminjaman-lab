@@ -11,8 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://cloudflare.com" rel="stylesheet">
     <style>
         body, html{
             height: 100%;
@@ -65,57 +63,16 @@
     </nav>
 
     <!-- Sidebar -->
-    <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
-      <div class="sidebar-brand">
-        <a href="#" class="brand-link">
-          <span class="brand-text">Peminjaman Lab</span>
-        </a>
-      </div>
-      <div class="sidebar-wrapper">
-        <nav class="mt-2">
-          <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu">
-           @if ($role == 'mahasiswa')
-            @include('layout.sidebar-mahasiswa')
-           @endif
-           @if ($role == 'aslab')
-            @include('layout.sidebar-aslab')
-           @endif
-           @if ($role == 'admin')
-            @include('layout.sidebar-admin')
-           @endif
-          </ul>
-        </nav>
-      </div>
-    </aside>
+    @include('layout.sidebar')
 
     <!-- Main content -->
-    <main class="app-main">
-      <div class="app-content-header">
-        <div class="container-fluid">
-          <h3 class="mb-0">
-            @yield('title')
-          </h3>
-        </div>
-      </div>
-      <div class="app-content">
-        <div class="container-fluid">
-          <div class="card">
-            <div class="card-header">
-                @yield('card-header')
-                <h5 class="card-title"></h5>
-            </div>
-            <div class="card-body">
-                @yield('card-body')
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
+     @if ()
+      @include('layout.content')
+     @endif
+
   </div>
 
-    <script src="https://jsdelivr.net"></script>
-    <script src="https://jsdelivr.net"></script>
-
+    <!-- <script src="https://jsdelivr.net"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js"></script>

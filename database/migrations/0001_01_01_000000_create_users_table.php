@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('no_wa');
             $table->string('kelas_jurusan');
-            $table->enum('role', ['admin', 'aslab', 'mahasiswa'])->default('mahasiswa');
+            $table->enum('role', ['Admin', 'Asisten Lab', 'Mahasiswa'])->default('Mahasiswa');
             $table->rememberToken();
             $table->timestamps();
         });

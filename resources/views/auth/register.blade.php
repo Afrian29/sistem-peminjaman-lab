@@ -88,8 +88,8 @@
                         <label for="role">Role</label>
                         <select class="input" id="role" name="role" required>
                             <option value="" disabled {{ old('role') ? '' : 'selected' }}>Pilih Peran</option>
-                            <option value="mahasiswa" {{ old('role') === 'mahasiswa' ? 'selected' : '' }}>Mahasiswa</option>
-                            <option value="aslab" {{ old('role') === 'aslab' ? 'selected' : '' }}>Asisten Lab (Aslab)</option>
+                            <option value="Mahasiswa" {{ old('role') === 'Mahasiswa' ? 'selected' : '' }}>Mahasiswa</option>
+                            <option value="Asisten Lab" {{ old('role') === 'Asisten Lab' ? 'selected' : '' }}>Asisten Lab</option>
                         </select>
                         @error('role')
                             <p class="field-error">{{ $message }}</p>

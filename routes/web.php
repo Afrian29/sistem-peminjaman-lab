@@ -12,7 +12,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 //ADMIN
-Route::get('/akun-admin', [AdminController::class, 'akun'])->name('akun');
+// Route::get('/akun-admin', [AdminController::class, 'akun'])->name('akun');
+Route::get('/akun-admin', [AdminController::class, 'semuaAkun'])->name('semuaAkun');
+Route::post('/');
 
 //ASLAB
 Route::get('/pengajuan', [AslabController::class, 'pengajuan'])->name('pengajuan');
