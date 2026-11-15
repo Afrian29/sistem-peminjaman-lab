@@ -35,7 +35,7 @@
                 <h1>Masuk</h1>
                 <p class="card-sub">Pakai email dan password akun Anda</p>
                 @if(session('success'))
-                    <div class="alert alert-succes" role="status">
+                    <div class="alert alert-success" role="status">
                         <span>{{ session('success') }}</span>
 
                     </div>
