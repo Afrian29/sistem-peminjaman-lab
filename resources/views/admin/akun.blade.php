@@ -17,23 +17,23 @@
                 <th>Nama</th>
                 <th>Email</th>
                 <th>NIM</th>
-                <th>Role</th>
-                <th>Program Studi</th>
-                <th>Kelas</th>
+                <th>Jenis Pengguna</th>
+                <th>Prodi dan Kelas</th>
+                <th>Nomor WA</th>
                 <th>Status</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Rian</td>
+                <td>Afriansyah</td>
                 <td>rrianafriansyah@gmail.com</td>
                 <td>531424008</td>
-                <td>Kamen Rider Wizard</td>
-                <td>Sistem Informasi</td>
-                <td>Kelas A</td>
+                <td>Mahasiswa</td>
+                <td>Sistem Informasi, Kelas A 24</td>
+                <td>085242971471</td>
                 <td>Aktif</td>
-                <td>Hapus | Edit</td>
+                <td>Hapus|Nonaktif</td>
             </tr>
         </tbody>
     </table>
