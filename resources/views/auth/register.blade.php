@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -105,20 +106,36 @@
 
                     <div class="field">
                         <label for="password">Password</label>
-                        <div>
+                        <div class="field-control">
                             <input class="input" type="password" id="password" name="password"
                                 placeholder="Minimal 8 karakter" required>
-                            @error('password')
-                                <p class="field-error">{{ $message }}</p>
-                            @enderror
+                            <button class="field-toggle" type="button" id="toggle-password"
+                                aria-label="Tampilkan password" aria-pressed="false">
+                                <i class="bi bi-eye icon-show"></i>
+                                <i class="bi bi-eye-slash icon-hide"></i>
+                            </button>
                         </div>
+                        @error('password')
+                            <p class="field-error">{{ $message }}</p>
+                        @enderror
 
                     </div>
 
                     <div class="field">
                         <label for="password_confirmation">Konfirmasi Password</label>
-                        <input class="input" type="password" id="password_confirmation" name="password_confirmation"
-                            placeholder="Ulangi password" required>
+                        <div class="field-control">
+                            <input class="input" type="password" id="password_confirmation" name="password_confirmation"
+                                placeholder="Ulangi password" required>
+                            <button class="field-toggle" type="button" id="toggle-password-confirmation"
+                                aria-label="Tampilkan password" aria-pressed="false">
+                                <i class="bi bi-eye icon-show"></i>
+                                <i class="bi bi-eye-slash icon-hide"></i>
+                            </button>
+                        </div>
+                        @error('password_confirmation')
+                            <p class="field-error">{{ $message }}</p>
+                        @enderror
+
                     </div>
 
                     <button class="btn-primary" type="submit">Daftar Sekarang</button>
@@ -131,6 +148,27 @@
             </div>
         </main>
     </div>
+
+    <script>
+        function setupPasswordToggle(buttonId, inputId) {
+            const toggleBtn = document.getElementById(buttonId);
+            const passwordInput = document.getElementById(inputId);
+
+            if (toggleBtn && passwordInput) {
+                toggleBtn.addEventListener('click', function () {
+                    const isPassword = passwordInput.type === 'password';
+                    passwordInput.type = isPassword ? 'text' : 'password';
+                    this.classList.toggle('is-revealed', isPassword);
+
+                    this.setAttribute('aria-pressed', isPassword ? 'true' : 'false');
+                    this.setAttribute('aria-label', isPassword ? 'Sembunyikan password' : 'Tampilkan Password');
+                });
+            }
+        }
+
+        setupPasswordToggle('toggle-password', 'password');
+        setupPasswordToggle('toggle-password-confirmation', 'password_confirmation');
+    </script>
 </body>
 
 </html>
