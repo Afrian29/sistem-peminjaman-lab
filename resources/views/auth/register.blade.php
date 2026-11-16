@@ -107,35 +107,22 @@
                     <div class="field">
                         <label for="password">Password</label>
                         <div class="field-control">
-                            <input class="input" type="password" id="password" name="password"
-                                placeholder="Minimal 8 karakter" required>
-                            <button class="field-toggle" type="button" id="toggle-password"
-                                aria-label="Tampilkan password" aria-pressed="false">
+                        <input class="input" type="password" id="password" name="password" placeholder="Minimal 8 karakter" required>
+                        @error('password')
+                            <p class="field-error">{{ $message }}</p>
+                        @enderror
+                            <button class="field-toggle" type="button" id="toggle-password" aria-label="Tampilkan password" aria-pressed="false">
                                 <i class="bi bi-eye icon-show"></i>
                                 <i class="bi bi-eye-slash icon-hide"></i>
                             </button>
                         </div>
-                        @error('password')
-                            <p class="field-error">{{ $message }}</p>
-                        @enderror
-
                     </div>
 
                     <div class="field">
                         <label for="password_confirmation">Konfirmasi Password</label>
                         <div class="field-control">
-                            <input class="input" type="password" id="password_confirmation" name="password_confirmation"
-                                placeholder="Ulangi password" required>
-                            <button class="field-toggle" type="button" id="toggle-password-confirmation"
-                                aria-label="Tampilkan password" aria-pressed="false">
-                                <i class="bi bi-eye icon-show"></i>
-                                <i class="bi bi-eye-slash icon-hide"></i>
-                            </button>
+                        <input class="input" type="password" id="password-confirmation" name="password_confirmation" placeholder="Ulangi password" required>
                         </div>
-                        @error('password_confirmation')
-                            <p class="field-error">{{ $message }}</p>
-                        @enderror
-
                     </div>
 
                     <button class="btn-primary" type="submit">Daftar Sekarang</button>
