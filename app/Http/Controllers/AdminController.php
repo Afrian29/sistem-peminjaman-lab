@@ -16,4 +16,15 @@ class AdminController extends Controller
         $roleAktif = 'admin';
         return view('admin.akun',compact('akun'),['role' => $roleAktif]);
     }
+    public function delete($nim_nip){
+        $dataUser = User::where('nim_nip', $nim_nip)->first();
+        if(!$dataUser){
+            $status = 'error';
+            $message = "Gagal menghapus user";
+        }else{
+            $dataUser->delete();
+            $status ='success';
+            $message = "Data Berhasil di Hapus";
+        }
+    }
 }

@@ -3,16 +3,15 @@
     <h2>Kelola Akun dan Akses</h2>
 @endsection
 @section('title')
-    
+
 @endsection
 
 @section('card-header')
-
-    
+    <h1>Akun User</h1>
 @endsection
 @section('card-body')
 <div class="border rounded-3 overflow-auto">
-    <table border="0" class="table table-striped mb-0">
+    <table border="0" class="table table-bordered text-center align-middle mb-0">
         <thead style="font-weight: bold;">
             <tr>
                 <th scope="row">Nama</th>
@@ -33,8 +32,8 @@
                 <td>{{$user->role}}</td>
                 <td>{{$user->kelas_jurusan}}</td>
                 <td>{{$user->no_wa}}</td>
-                <td style="text-align: center;"><a href="{{ url('/delete/'.$user->nim_nip) }}"><button type="button" class="btn btn-danger">Delete</button></a>
-                <a href="{{ url('/update/'.$user->nim_nip) }}"><button type="button" class="btn btn-info">Update</button></a></td>
+                <td style="text-align: center;"><a href="{{ url('/delete-akun/'.$user->nim_nip) }}"><button type="button" class="btn btn-danger">Delete</button></a>
+                <a href="{{ url('/update-user/'.$user->nim_nip) }}"><button type="button" class="btn btn-info">Update</button></a></td>
             </tr>
             @endforeach
         </tbody>

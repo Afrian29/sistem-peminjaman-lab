@@ -8,13 +8,11 @@ use App\Http\Controllers\LabController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [LoginController::class, 'form'])->name('login');
 //ADMIN
 // Route::get('/akun-admin', [AdminController::class, 'akun'])->name('akun');
 Route::get('/akun-admin', [AdminController::class, 'semuaAkun'])->name('semuaAkun');
-Route::post('/');
+Route::post('/delete-akun/{nim_nip}',[AdminController::class, 'delete']);
 
 //ASLAB
 Route::get('/pengajuan', [AslabController::class, 'pengajuan'])->name('pengajuan');
