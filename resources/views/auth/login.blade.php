@@ -40,7 +40,7 @@
 
                     </div>
                 @endif
-                @if ($errors->has('credential'))
+                @if ($errors->has('credentials'))
                     <div class="alert alert-danger" role="alert">
                         <span>{{ $errors->first('credentials') }}</span>
                     </div>
