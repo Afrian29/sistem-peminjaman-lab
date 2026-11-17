@@ -10,9 +10,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LoginController::class, 'form'])->name('login');
 //ADMIN
-// Route::get('/akun-admin', [AdminController::class, 'akun'])->name('akun');
-Route::get('/akun-admin', [AdminController::class, 'semuaAkun'])->name('semuaAkun');
+// Route::get('/akun-admin', [AdminController::class, 'akun'])->name('akun-admin');
+Route::get('/akun-admin', [AdminController::class, 'semuaAkun'])->name('akun-admin');
 Route::post('/delete-akun/{nim_nip}',[AdminController::class, 'delete']);
+Route::get('riwayat-admin',[AdminController::class, 'riwayat'])->name('riwayat-admin');
+Route::get('statuslab-admin',[AdminController::class, 'statuslab'])->name('statuslab-admin');
+Route::get('notifikasi-admin',[AdminController::class, 'notifikasi'])->name('notifikasi-admin');
 
 //ASLAB
 Route::get('/pengajuan', [AslabController::class, 'pengajuan'])->name('pengajuan');

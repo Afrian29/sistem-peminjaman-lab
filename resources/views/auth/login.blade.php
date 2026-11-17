@@ -53,7 +53,7 @@
                     <div class="field">
                         <label for="email">Email</label>
                         <input class="input" type="email" id="email" name="email" value="{{ old('email') }}"
-                               placeholder="nama@email.com" autocomplete="username" required autofocus
+                               placeholder="email@gmail.com" autocomplete="username" required autofocus
                                @error('email') aria-invalid="true" aria-describedby="email-error" @enderror>
                         @error('email')
                             <p class="field-error" id="email-error">{{ $message }}</p>
