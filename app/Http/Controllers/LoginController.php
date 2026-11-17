@@ -42,9 +42,9 @@ class LoginController extends Controller
     private function homeFor(?string $role): string
     {
         return match ($role) {
-            'aslab' => route('status-lab-aslab'),
-            'admin' => route(''),
-            default => route('beranda'),
+            'Asisten Lab' => route('status-lab-aslab'),
+            'Admin' => route(''),
+            'Mahasiswa' => route('beranda'),
         };
     }
 }

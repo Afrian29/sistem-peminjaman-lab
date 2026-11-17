@@ -3,38 +3,40 @@
     <h2>Kelola Akun dan Akses</h2>
 @endsection
 @section('title')
-    
+
 @endsection
 
 @section('card-header')
-
-    
+    <h1>Akun User</h1>
 @endsection
 @section('card-body')
-    <table border="0" class="table">
-        <thead>
+<div class="border rounded-3 overflow-auto">
+    <table border="0" class="table table-bordered text-center align-middle mb-0">
+        <thead style="font-weight: bold;">
             <tr>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>NIM</th>
-                <th>Jenis Pengguna</th>
-                <th>Prodi dan Kelas</th>
-                <th>Nomor WA</th>
-                <th>Status</th>
-                <th>Aksi</th>
+                <th scope="row">Nama</th>
+                <th scope="row">Email</th>
+                <th scope="row">NIM</th>
+                <th scope="row">Jenis Pengguna</th>
+                <th scope="row">Prodi dan Kelas</th>
+                <th scope="row">Nomor WA</th>
+                <th scope="row" style="text-align: center;">Aksi</th>
             </tr>
         </thead>
         <tbody>
+            @foreach ($akun as $user)
             <tr>
-                <td>Afriansyah</td>
-                <td>rrianafriansyah@gmail.com</td>
-                <td>531424008</td>
-                <td>Mahasiswa</td>
-                <td>Sistem Informasi, Kelas A 24</td>
-                <td>085242971471</td>
-                <td>Aktif</td>
-                <td>Hapus|Nonaktif</td>
+                <td>{{ $user->name }}</td>
+                <td>{{$user->email}}</td>
+                <td>{{$user->nim_nip}}</td>
+                <td>{{$user->role}}</td>
+                <td>{{$user->kelas_jurusan}}</td>
+                <td>{{$user->no_wa}}</td>
+                <td style="text-align: center;"><a href="{{ url('/delete-akun/'.$user->nim_nip) }}"><button type="button" class="btn btn-danger">Delete</button></a>
+                <a href="{{ url('/update-user/'.$user->nim_nip) }}"><button type="button" class="btn btn-info">Update</button></a></td>
             </tr>
+            @endforeach
         </tbody>
     </table>
+</div>
 @endsection
