@@ -119,8 +119,12 @@
                     <div class="field">
                         <label for="password_confirmation">Konfirmasi Password</label>
                         <div class="field-control">
-                        <input class="input" type="password" id="password-confirmation" name="password_confirmation" placeholder="Ulangi password" required>
-                        </div>
+                        <input class="input" type="password" id="password_confirmation" name="password_confirmation" placeholder="Ulangi password" required>
+                        <button class="field-toggle" type="button" id="toggle-password-confirmation" aria-label="Tampilkan password" aria-pressed="false">
+                                <i class="bi bi-eye icon-show"></i>
+                                <i class="bi bi-eye-slash icon-hide"></i>
+                            </button>
+                    </div>
                     </div>
 
                     <button class="btn-primary" type="submit">Daftar Sekarang</button>
