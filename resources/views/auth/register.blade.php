@@ -62,7 +62,8 @@
 
                     <div class="field">
                         <label for="email">Email</label>
-                        <input class="input" type="email" id="email" name="email" value="{{ old('email') }}" placeholder="nama@gmail.com" required>
+                        <input class="input" type="email" id="email" name="email" value="{{ old('email') }}"
+                            placeholder="email@gmail.com" required>
                         @error('email')
                             <p class="field-error">{{ $message }}</p>
                         @enderror
@@ -88,9 +89,7 @@
                         <label for="role">Role</label>
                         <select class="input" id="role" name="role" required>
                             <option value="" disabled {{ old('role') ? '' : 'selected' }}>Pilih Peran</option>
-                            <option value="Mahasiswa" {{ old('role') === 'Mahasiswa' ? 'selected' : '' }}>Mahasiswa</option>
-                            <option value="Asisten Lab" {{ old('role') === 'Asisten Lab' ? 'selected' : '' }}>Asisten Lab</option>
-                        </select>
+                            <option value="Mahasiswa" {{ old('role') === 'Mahasiswa' ? 'selected' : '' }}>Mahasiswa</option>                        </select>
                         @error('role')
                             <p class="field-error">{{ $message }}</p>
                         @enderror

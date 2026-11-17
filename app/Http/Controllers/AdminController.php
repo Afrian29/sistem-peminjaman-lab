@@ -27,4 +27,16 @@ class AdminController extends Controller
             $message = "Data Berhasil di Hapus";
         }
     }
+    public function riwayat(){
+        $roleAktif = 'admin';
+        return view('admin.riwayat',['role' => $roleAktif]);
+    }
+    public function statuslab(){
+        $roleAktif = 'admin';
+        return view('admin.statuslab',['role' => $roleAktif]);
+    }
+    public function notifikasi(){
+        $roleAktif = 'admin';
+        return view('admin.notifikasi',['role' => $roleAktif]);
+    }
 }
