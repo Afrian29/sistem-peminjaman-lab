@@ -131,7 +131,7 @@
 
             <div class="register-row">
                 <span>Sudah punya akun?</span>
-                <a class="link" href="{{ url('/login') }}">Login di sini</a>
+                <a class="link" href="{{ route('login') }}">Login di sini</a>
             </div>
         </main>
     </div>

@@ -7,15 +7,7 @@
   <div class="sidebar-wrapper">
     <nav class="mt-2">
       <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu">
-       @if ($role == 'mahasiswa')
-        @include('layout.sidebar-mahasiswa')
-       @endif
-       @if ($role == 'aslab')
-        @include('layout.sidebar-aslab')
-       @endif
-       @if ($role == 'admin')
-        @include('layout.sidebar-admin')
-       @endif
+    @includeIf('layout.sidebar-'.strtolower(auth()->user()->role))
       </ul>
     </nav>
     </div>
