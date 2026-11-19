@@ -16,7 +16,7 @@
     <div class="login">
         <div class="login-brand">
             <div>
-                <p class="brand-name">Peminjaman Lab</p>
+                <p class="brand-name">Peminjaman Lab TES</p>
                 <p class="brand-campus">Kampus 4 Universitas Negeri Gorontalo</p>
             </div>
 
