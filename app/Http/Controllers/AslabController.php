@@ -7,32 +7,26 @@ use Illuminate\Http\Request;
 class AslabController extends Controller
 {
     public function pengajuan(){
-        $roleAktif = 'aslab';
-        return view('aslab.pengajuan',['role' => $roleAktif]);
+        return view('aslab.pengajuan');
     }
 
     public function statuslab(){
-        $roleAktif = 'aslab';
-        return view('aslab.status-lab',['role' => $roleAktif]);
+        return view('aslab.status-lab');
     }
 
     public function jadwaltetap(){
-        $roleAktif = 'aslab';
-        return view('aslab.jadwal-tetap',['role' => $roleAktif]);
+        return view('aslab.jadwal-tetap');
     }
 
     public function RiwayatPeminjaman(){
-        $roleAktif = 'aslab';
-        return view('aslab.rekap-peminjaman',['role' => $roleAktif]);
+        return view('aslab.rekap-peminjaman');
     }
 
     public function akun(){
-        $roleAktif = 'aslab';
-        return view('aslab.akun',['role' => $roleAktif]);
+        return view('aslab.akun');
     }
 
     public function lab(){
-        $roleAktif = 'aslab';
-        return view('aslab.lab',['role' => $roleAktif]);
+        return view('aslab.lab');
     }
 }

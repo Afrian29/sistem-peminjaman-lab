@@ -5,11 +5,10 @@
 @endsection
 
 @section('title')
-
 @endsection
 
 @section('card-header')
-    <h3></h3>
+        <h3><i>Selamat Datang {{ $mahasiswa -> name }}!</i></h3>
 @endsection
 
 @section('card-body')

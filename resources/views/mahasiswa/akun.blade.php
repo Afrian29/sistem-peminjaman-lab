@@ -11,5 +11,5 @@
 @endsection
 
 @section('card-body')
-    <p>Nama: Ival Firizqi | Keting SI A 2077</p>
+    <p>Afriansyah</p>
 @endsection

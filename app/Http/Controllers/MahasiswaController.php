@@ -2,33 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MahasiswaController extends Controller
 {
     public function beranda(){
-        $roleAktif = 'mahasiswa';
-        return view('mahasiswa.beranda', ['role' => $roleAktif]);
+        $mahasiswa = auth()->user();
+        return view('mahasiswa.beranda', compact('mahasiswa'));
     } 
 
     public function riwayat(){
-        $roleAktif = 'mahasiswa';
-        return view('mahasiswa.riwayat', ['role' => $roleAktif]);
+        return view('mahasiswa.riwayat');
     } 
 
     public function statusLab(){
-        $roleAktif = 'mahasiswa';
-        return view('mahasiswa.status-lab', ['role' => $roleAktif]);
+        return view('mahasiswa.status-lab');
     } 
 
     public function notifikasi(){
-        $roleAktif = 'mahasiswa';
-        return view('mahasiswa.notifikasi', ['role' => $roleAktif]);
+        return view('mahasiswa.notifikasi');
     } 
 
     public function akun(){
-        $roleAktif = 'mahasiswa';
-        return view('mahasiswa.akun', ['role' => $roleAktif]);
+        return view('mahasiswa.akun', ['role'=> $roleAktif]);
     } 
 }
 
