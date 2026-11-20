@@ -28,7 +28,6 @@ Route::middleware(['auth','role:Asisten Lab'])->prefix('aslab')->name('aslab.')-
     Route::get('/jadwal-tetap', [AslabController::class, 'jadwaltetap'])->name('jadwal-tetap');
     Route::get('/riwayat-peminjaman', [AslabController::class, 'RiwayatPeminjaman'])->name('riwayat-peminjaman');
     Route::get('/akun', [AslabController::class, 'akun'])->name('akun');
-    Route::get('/lab', [AslabController::class, 'lab'])->name('lab');
     route::resource('lab', LabController::class);
     Route::patch('/labs/{lab}/toggle', [LabController::class, 'toggle'])->name('labs.toggle');
 });

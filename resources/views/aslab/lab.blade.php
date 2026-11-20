@@ -40,7 +40,7 @@
                     <td>{{ $lab->kapasitas }}</td>
                     <td>{{ $lab->fasilitas }}</td>
                     <td class="align-items-center">
-                        <form action="{{ route('labs.toggle', $lab) }}" method="POST">
+                        <form action="{{ route('aslab.labs.toggle', $lab) }}" method="POST">
                             @csrf
                             @method('PATCH')
                             <button type="submit" class="btn {{ $lab->status->color() }}" style="min-width: 120px;">
@@ -53,7 +53,7 @@
                             class="btn btn-sm btn-outline-primary btn-edit"
                             data-bs-toggle="modal"
                             data-bs-target="#EditModal"
-                            data-action="{{ route('lab.update', $lab) }}"
+                            data-action="{{ route('aslab.lab.update', $lab) }}"
                             data-kode="{{ $lab->kode_lab }}"
                             data-nama="{{ $lab->nama_lab }}"
                             data-lokasi="{{ $lab->lokasi }}"
@@ -65,7 +65,7 @@
                             class="btn btn-sm btn-outline-danger"
                             data-bs-toggle="modal"
                             data-bs-target="#DeleteModal"
-                            data-action="{{ route('lab.destroy', $lab) }}"
+                            data-action="{{ route('aslab.lab.destroy', $lab) }}"
                             data-nama="{{ $lab->nama_lab }}">
                             <i class="bi bi-trash"></i>
                         </button>
@@ -84,7 +84,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form class="form-floating" action="{{ route('lab.store') }}" method="POST">
+                <form class="form-floating" action="{{ route('aslab.lab.store') }}" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label for="kode_lab" class="form-label">Kode Lab</label>
