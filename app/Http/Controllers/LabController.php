@@ -12,10 +12,8 @@ class LabController extends Controller
      */
     public function index()
     {
-        $roleAktif = 'aslab';
-
         $labs = Lab::all();
-        return view('aslab.lab',['role' => $roleAktif], compact('labs'));
+        return view('aslab.lab', compact('labs'));
     }
 
     public function toggle(Lab $lab)

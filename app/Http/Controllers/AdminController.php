@@ -13,29 +13,24 @@ class AdminController extends Controller
     // } 
     public function semuaAkun(){
         $akun = User::select('*')->get();
-        $roleAktif = 'admin';
-        return view('admin.akun',compact('akun'),['role' => $roleAktif]);
+        return view('admin.akun',compact('akun'));
     }
     public function delete($nim_nip){
         $dataUser = User::where('nim_nip', $nim_nip)->first();
         if(!$dataUser){
-            return view('admin.akun');
+            return redirect ('admin.akun')->route('admin.akun')->with('error', 'Gagal Menghapus Akun');
         }else{
             $dataUser->delete();
-            $status ='success';
-            $message = "Data Berhasil di Hapus";
+            return redirect()->route('admin.akun')->with('success','Akun berhasil dihapus');
         }
     }
     public function riwayat(){
-        $roleAktif = 'admin';
-        return view('admin.riwayat',['role' => $roleAktif]);
+        return view('admin.riwayat');
     }
     public function statuslab(){
-        $roleAktif = 'admin';
-        return view('admin.statuslab',['role' => $roleAktif]);
+        return view('admin.statuslab');
     }
     public function notifikasi(){
-        $roleAktif = 'admin';
-        return view('admin.notifikasi',['role' => $roleAktif]);
+        return view('admin.notifikasi');
     }
 }

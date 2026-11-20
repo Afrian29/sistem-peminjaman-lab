@@ -56,4 +56,16 @@
             });
         </script>
     @endif
+        @if (session('error'))
+        <script>
+            Swal.fire({
+                toast: true,
+                position: 'top-end',
+                icon: 'error',
+                title: @json(session('error')),
+                showConfirmButton: false,
+                timer: 3000,
+            });
+        </script>
+    @endif
 @endsection
