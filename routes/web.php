@@ -13,10 +13,7 @@ Route::get('/', [LoginController::class, 'form'])->name('login');
 // Route::get('/akun-admin', [AdminController::class, 'akun'])->name('akun-admin');
 
 
-Route::middleware(['auth', 'role:Admin']) 
-    ->prefix('admin')                     
-    ->name('admin.')                      
-    ->group(function () {                 
+Route::middleware(['auth', 'role:Admin'])->prefix('admin')->name('admin.')->group(function () {                 
         Route::get('/akun', [AdminController::class, 'semuaAkun'])->name('akun');
         Route::post('/delete/{nim_nip}',[AdminController::class, 'delete'])->name('delete');
         Route::get('/riwayat',[AdminController::class, 'riwayat'])->name('riwayat');
@@ -25,7 +22,7 @@ Route::middleware(['auth', 'role:Admin'])
     });
 
 //ASLAB
-Route::middleware(['auth','role:Asisten Lab'])->prefix('aslab')->name('aslab')->group(function(){
+Route::middleware(['auth','role:Asisten Lab'])->prefix('aslab')->name('aslab.')->group(function(){
     Route::get('/pengajuan', [AslabController::class, 'pengajuan'])->name('pengajuan');
     Route::get('/status-lab', [AslabController::class, 'statuslab'])->name('status-lab');
     Route::get('/jadwal-tetap', [AslabController::class, 'jadwaltetap'])->name('jadwal-tetap');
