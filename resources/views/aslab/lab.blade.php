@@ -227,6 +227,4 @@
             document.getElementById('deleteNama').textContent = btn.dataset.nama;
         });
     </script>
-  
-    
 @endsection
