@@ -49,7 +49,7 @@ class LabController extends Controller
 
         Lab::create($validated);
 
-        return redirect()->route('lab.index')->with('success', 'Lab berhasil ditambahkan.');
+        return redirect()->route('aslab.lab.index')->with('success', 'Lab berhasil ditambahkan.');
     }
 
     /**
@@ -95,6 +95,6 @@ class LabController extends Controller
     {
         $lab = Lab::find($id);
         $lab->delete();
-        return redirect() ->route('lab.index')->with('success', 'deleted successfully');
+        return redirect() ->route('aslab.lab.index')->with('success', 'deleted successfully');
     }
 }

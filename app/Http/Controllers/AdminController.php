@@ -19,8 +19,7 @@ class AdminController extends Controller
     public function delete($nim_nip){
         $dataUser = User::where('nim_nip', $nim_nip)->first();
         if(!$dataUser){
-            $status = 'error';
-            $message = "Gagal menghapus user";
+            return view('admin.akun');
         }else{
             $dataUser->delete();
             $status ='success';
