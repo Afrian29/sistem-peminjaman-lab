@@ -25,7 +25,7 @@ class MahasiswaController extends Controller
     } 
 
     public function akun(){
-        return view('mahasiswa.akun', ['role'=> $roleAktif]);
+        return view('mahasiswa.akun');
     } 
 }
 
