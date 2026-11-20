@@ -32,8 +32,12 @@
                 <td>{{$user->role}}</td>
                 <td>{{$user->kelas_jurusan}}</td>
                 <td>{{$user->no_wa}}</td>
-                <td style="text-align: center;"><a href="{{ url('/delete-akun/'.$user->nim_nip) }}"><button type="button" class="btn btn-danger">Delete</button></a>
-                <a href="{{ url('/update-user/'.$user->nim_nip) }}"><button type="button" class="btn btn-info">Update</button></a></td>
+                <td><form method="POST" action="{{ route('admin.delete', ['nim_nip'=>$user->nim_nip])}}"
+                    onsubmit="return confirm(@js('Yakin Ingin menghapus akun atas nama '.$user->name.'?'))">
+                    @csrf
+                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash3"></i></button>
+                    </form>
+                <a href="{{ url('/update-user/'.$user->nim_nip) }}"><button type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></button></a></td>
             </tr>
             @endforeach
         </tbody>
