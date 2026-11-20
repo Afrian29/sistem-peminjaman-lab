@@ -9,13 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
 <body>
     <div class="login">
         <div class="login-brand">
             <div>
-                <p class="brand-name">Peminjaman Lab</p>
+                <p class="brand-name">Peminjaman Lab TES</p>
                 <p class="brand-campus">Kampus 4 Universitas Negeri Gorontalo</p>
             </div>
 
@@ -35,12 +36,12 @@
                 <h1>Masuk</h1>
                 <p class="card-sub">Pakai email dan password akun Anda</p>
                 @if(session('success'))
-                    <div class="alert alert-succes" role="status">
+                    <div class="alert alert-success" role="status">
                         <span>{{ session('success') }}</span>
 
                     </div>
                 @endif
-                @if ($errors->has('credential'))
+                @if ($errors->has('credentials'))
                     <div class="alert alert-danger" role="alert">
                         <span>{{ $errors->first('credentials') }}</span>
                     </div>
@@ -67,7 +68,8 @@
                                    @error('password') aria-invalid="true" aria-describedby="password-error" @enderror>
                             <button class="field-toggle" type="button" id="toggle-password"
                                     aria-label="Tampilkan password" aria-pressed="false">
-                                <i class="bi bi-eye"></i>
+                                <i class="bi bi-eye icon-show"></i>
+                                <i class="bi bi-eye-slash icon-hide"></i>
                             </button>
                         </div>
                         @error('password')
@@ -88,6 +90,24 @@
 
         </main>
     </div>
+
+    <script>
+        const toggleBtn = document.getElementById('toggle-password');
+        const passwordInput = document.getElementById('password');
+
+        if (toggleBtn && passwordInput) {
+            toggleBtn.addEventListener('click', function(){
+                const isPassword = passwordInput.type === 'password';
+                passwordInput.type = isPassword ? 'text' : 'password';
+                this.classList.toggle('is-revealed', isPassword);
+
+                this.setAttribute('aria-pressed', isPassword ? 'true' : 'false');
+                this.setAttribute('aria-label', isPassword ? 'Sembunyikan password' : 'Tampilkan Password');
+            });
+        }
+
+
+    </script>
 </body>
 
 </html>

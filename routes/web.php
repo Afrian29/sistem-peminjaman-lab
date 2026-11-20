@@ -15,10 +15,10 @@ Route::get('/', [LoginController::class, 'form'])->name('login');
 
 Route::middleware(['auth', 'role:Admin'])->prefix('admin')->name('admin.')->group(function () {                 
         Route::get('/akun', [AdminController::class, 'semuaAkun'])->name('akun');
-        Route::post('/delete/{nim_nip}',[AdminController::class, 'delete'])->name('delete');
-        Route::get('/riwayat',[AdminController::class, 'riwayat'])->name('riwayat');
-        Route::get('/statuslab',[AdminController::class, 'statuslab'])->name('statuslab');
-        Route::get('/notifikasi',[AdminController::class, 'notifikasi'])->name('notifikasi');
+        Route::post('/delete/{nim_nip}', [AdminController::class, 'delete'])->name('delete');
+        Route::get('/riwayat', [AdminController::class, 'riwayat'])->name('riwayat');
+        Route::get('/statuslab', [AdminController::class, 'statuslab'])->name('statuslab');
+        Route::get('/notifikasi', [AdminController::class, 'notifikasi'])->name('notifikasi');
     });
 
 //ASLAB
@@ -34,7 +34,7 @@ Route::middleware(['auth','role:Asisten Lab'])->prefix('aslab')->name('aslab.')-
 
 
 //MAHASISWA
-Route::middleware(['auth','role:Mahasiswa'])->prefix("mahasiswa")->name('mahasiswa.')->group(function(){
+Route::middleware(['auth', 'role:Mahasiswa'])->prefix("mahasiswa")->name('mahasiswa.')->group(function () {
     Route::get('/beranda', [MahasiswaController::class, 'beranda'])->name('beranda');
     Route::get('/riwayat', [MahasiswaController::class, 'riwayat'])->name('riwayat');
     Route::get('/status-lab', [MahasiswaController::class, 'statusLab'])->name('status-lab');
@@ -48,7 +48,7 @@ Route::get('/register', [RegisterController::class, 'form']);
 Route::post('/register', [RegisterController::class, 'registration']);
 
 // Login
-Route::get('/login',[LoginController::class, 'form']);
+Route::get('/login', [LoginController::class, 'form']);
 
 // CRUD Lab
 
