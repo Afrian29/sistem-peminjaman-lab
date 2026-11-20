@@ -41,7 +41,7 @@ class LoginController extends Controller
 
     private function homeFor(?string $role): string
     {
-        return match ($role) {
+        return match (strtolower((string) $role)) {
             'aslab', 'Asisten Lab' => route('aslab.pengajuan'),
             'admin', 'Admin' => route('admin.akun'),
             'mahasiswa', 'Mahasiswa' => route('mahasiswa.beranda'),
