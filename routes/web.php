@@ -59,3 +59,25 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 //Ganti role
 Route::post('/switch-role', [RoleSwitchController::class, 'switch'])->middleware('auth')->name('role.switch');
+
+
+// // Route tes pergantian role tanpa login
+// Route::get('/test-login/{email?}', function ($email = 'ikhsan@gmail.com') {
+//     // 1. Cari user berdasarkan email
+//     $user = \App\Models\User::where('email', $email)->firstOrFail();
+
+//     // 2. Login-kan user secara langsung
+//     \Illuminate\Support\Facades\Auth::login($user);
+
+//     // 3. Tentukan role aktif pertama
+//     $roleAwal = $user->roles->first()?->nama_role ?? 'Mahasiswa';
+//     session(['active_role' => $roleAwal]);
+
+//     // 4. Langsung redirect ke dashboard role tersebut
+//     return match ($roleAwal) {
+//         'Admin'       => redirect()->route('admin.akun'),
+//         'Asisten Lab' => redirect()->route('aslab.pengajuan'),
+//         default       => redirect()->route('mahasiswa.beranda'),
+//     };
+// });
+//masukkan http://sistem-peminjaman-lab.test/test-login di url browser
