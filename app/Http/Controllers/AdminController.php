@@ -13,7 +13,8 @@ class AdminController extends Controller
     // } 
     public function semuaAkun(){
         $akun = User::select('*')->get();
-        return view('admin.akun',compact('akun'));
+        $akundeleted =User::onlyTrashed()->get();
+        return view('admin.akun',compact('akun','akundeleted'));
     }
     public function delete($nim_nip){
         $dataUser = User::where('nim_nip', $nim_nip)->first();
