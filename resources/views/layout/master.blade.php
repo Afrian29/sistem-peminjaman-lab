@@ -77,14 +77,16 @@
               </div>
             </a>
             <ul class="dropdown-menu dropdown-menu-end shadow">
-              @foreach (collect([auth()->user()->role])->merge(auth()->user()->roles->pluck('nama_role'))->unique() as $r)
-                <li>
-                  <form action="{{ route('role.switch') }}" method="POST">
-                    @csrf
-                    <input type="hidden" name="role" value="{{ $r }}">
-                    <button class="dropdown-item {{ session('active_role') === $r ? 'active' : '' }}">{{ $r }}</button>
-                  </form>
-                </li>
+              @foreach (auth()->user()->roles as $r)
+                  <li>
+                      <form action="{{ route('role.switch') }}" method="POST">
+                          @csrf
+                          <input type="hidden" name="role" value="{{ $r->nama_role }}">
+                          <button class="dropdown-item {{ session('active_role') === $r->nama_role ? 'active' : '' }}">
+                              {{ $r->nama_role }}
+                          </button>
+                      </form>
+                  </li>
               @endforeach
               <li><hr class="dropdown-divider"></li>
               <li>

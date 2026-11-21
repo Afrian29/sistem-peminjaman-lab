@@ -15,7 +15,7 @@ class RoleMiddleware
      */
     public function handle(Request $request, Closure $next, string $role): Response
     {
-        $roleAktif = session('active_role', auth()->user()?->role);
+        $roleAktif = session('active_role') ?? auth()->user()?->roles->first()?->nama_role;
 
         if (!auth()->check() || $roleAktif !== $role) {
             abort(403, 'Akses ke Halaman ini hanya bisa diakses oleh ' . $role);
