@@ -12,10 +12,8 @@ class LabController extends Controller
      */
     public function index()
     {
-        $roleAktif = 'aslab';
-
         $labs = Lab::all();
-        return view('aslab.lab',['role' => $roleAktif], compact('labs'));
+        return view('aslab.lab', compact('labs'));
     }
 
     public function toggle(Lab $lab)
@@ -49,7 +47,7 @@ class LabController extends Controller
 
         Lab::create($validated);
 
-        return redirect()->route('lab.index')->with('success', 'Lab berhasil ditambahkan.');
+        return redirect()->route('aslab.lab.index')->with('success', 'Lab berhasil ditambahkan.');
     }
 
     /**
@@ -95,6 +93,6 @@ class LabController extends Controller
     {
         $lab = Lab::find($id);
         $lab->delete();
-        return redirect() ->route('lab.index')->with('success', 'deleted successfully');
+        return redirect() ->route('aslab.lab.index')->with('success', 'deleted successfully');
     }
 }

@@ -49,4 +49,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(LogKunci::class, 'aslab_id');
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
 }
