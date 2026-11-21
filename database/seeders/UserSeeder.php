@@ -23,7 +23,6 @@ class UserSeeder extends Seeder
                 'password'      => Hash::make('password'),
                 'no_wa'         => '081234567891',
                 'kelas_jurusan' => 'SI A / Informatika',
-                'role'          => 'Admin',
             ]
         );
         $ikhsan->roles()->sync([$adminRole->id, $aslabRole->id, $mahasiswaRole->id]);
@@ -36,11 +35,11 @@ class UserSeeder extends Seeder
                 'password'      => Hash::make('password'),
                 'no_wa'         => '081234567892',
                 'kelas_jurusan' => 'SI A / Informatika',
-                'role'          => 'Asisten Lab',
             ]
         );
         $saif->roles()->sync([$aslabRole->id, $mahasiswaRole->id]);
 
+     
         $rian = User::updateOrCreate(
             ['email' => 'rian@gmail.com'],
             [
@@ -49,7 +48,6 @@ class UserSeeder extends Seeder
                 'password'      => Hash::make('password'),
                 'no_wa'         => '081234567893',
                 'kelas_jurusan' => 'SI A / Informatika',
-                'role'          => 'Mahasiswa',
             ]
         );
         $rian->roles()->sync([$mahasiswaRole->id]);

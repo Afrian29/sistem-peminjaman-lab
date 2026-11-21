@@ -19,7 +19,6 @@ class User extends Authenticatable
         'password',
         'no_wa',
         'kelas_jurusan',
-        'role',
     ];
 
     protected $hidden = [
@@ -33,6 +32,11 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function hasRole(string $roleName): bool
+    {
+        return $this->roles->contains('nama_role', $roleName);
     }
 
     public function peminjamans()

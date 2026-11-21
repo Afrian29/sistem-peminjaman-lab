@@ -91,16 +91,6 @@
                     </div>
 
                     <div class="field">
-                        <label for="role">Role</label>
-                        <select class="input" id="role" name="role" required>
-                            <option value="" disabled {{ old('role') ? '' : 'selected' }}>Pilih Peran</option>
-                            <option value="Mahasiswa" {{ old('role') === 'Mahasiswa' ? 'selected' : '' }}>Mahasiswa</option>                        </select>
-                        @error('role')
-                            <p class="field-error">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <div class="field">
                         <label for="password">Password</label>
                         <div class="field-control">
                         <input class="input" type="password" id="password" name="password" placeholder="Minimal 8 karakter" required>

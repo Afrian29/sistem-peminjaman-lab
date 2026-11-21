@@ -11,10 +11,7 @@ class RoleSwitchController extends Controller
         $targetRole = $request->input('role');
         $user = auth()->user();
 
-        $isPrimaryRole = ($user->role === $targetRole); //untuk cek apakah user memang berhak memakai role atau entahlah sakit pala
-        $hasPivotRole  = $user->roles()->where('nama_role', $targetRole)->exists();
-
-        if (!$isPrimaryRole && !$hasPivotRole) {
+        if (!$user->roles()->where('nama_role', $targetRole)->exists()) {
             abort(403, 'Anda tidak memiliki hak akses untuk role ini.');
         }
 
