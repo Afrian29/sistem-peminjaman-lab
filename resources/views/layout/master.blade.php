@@ -42,6 +42,14 @@
         .brand-text{
             font-weight: 400 !important;
         }
+        .avatar { 
+            width: 35px; 
+            height: 35px; 
+            border-radius: 50%; 
+            background: #001F3F; 
+            color: #fff; display: 
+            grid; place-items: center; 
+            font-weight: bold; }
     </style>
   <title>Laboratiorium JTIF UNG</title>
 
@@ -57,6 +65,35 @@
             <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
                 @yield('header')
             </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link d-flex align-items-center gap-2" href="#" data-bs-toggle="dropdown">
+              <div class="avatar">{{ strtoupper(substr(auth()->user()->name, 0, 2)) }}</div>
+              <div style="min-width: 80px;">
+                <div class="fw-bold text-dark">{{ auth()->user()->name }}</div>
+                <small class="text-secondary">{{ session('active_role') }}</small>
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow">
+              @foreach (collect([auth()->user()->role])->merge(auth()->user()->roles->pluck('nama_role'))->unique() as $r)
+                <li>
+                  <form action="{{ route('role.switch') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="role" value="{{ $r }}">
+                    <button class="dropdown-item {{ session('active_role') === $r ? 'active' : '' }}">{{ $r }}</button>
+                  </form>
+                </li>
+              @endforeach
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <form action="{{ route('logout') }}" method="POST">
+                  @csrf
+                  <button class="dropdown-item text-danger">Keluar</button>
+                </form>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
