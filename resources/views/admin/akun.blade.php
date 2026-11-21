@@ -100,7 +100,8 @@
                                 <td>{{$user->name }}</td>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->nim_nip}}</td>
-                                <td>                                @php
+                                <td>
+                                @php
                                     $i=0;
                                 @endphp
                                 @foreach($user->roles as $role)
