@@ -28,7 +28,9 @@ class LoginController extends Controller
         }
 
         $request->session()->regenerate();
-        return redirect()->intended($this->homeFor($request->user()->role));
+        $roleAwal = $request->user()->role;
+        session(['active_role' => $roleAwal]);
+        return redirect()->intended($this->homeFor($roleAwal));
     }
 
     public function logout(Request $request)
@@ -45,6 +47,7 @@ class LoginController extends Controller
             'Asisten Lab' => route('aslab.pengajuan'),
             'Admin' => route('admin.akun'),
             'Mahasiswa' => route('mahasiswa.beranda'),
+            default => route('login'),
         };
     }
 }

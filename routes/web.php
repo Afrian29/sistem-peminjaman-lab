@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\LabController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\RoleSwitchController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LoginController::class, 'form'])->name('login');
@@ -55,3 +56,6 @@ Route::get('/login', [LoginController::class, 'form']);
 Route::get('/login', [LoginController::class, 'form'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+//Ganti role
+Route::post('/switch-role', [RoleSwitchController::class, 'switch'])->middleware('auth')->name('role.switch');
