@@ -14,16 +14,16 @@ Route::get('/', [LoginController::class, 'form'])->name('login');
 // Route::get('/akun-admin', [AdminController::class, 'akun'])->name('akun-admin');
 
 
-Route::middleware(['auth', 'role:Admin'])->prefix('admin')->name('admin.')->group(function () {                 
-        Route::get('/akun', [AdminController::class, 'semuaAkun'])->name('akun');
-        Route::post('/delete/{nim_nip}', [AdminController::class, 'delete'])->name('delete');
-        Route::get('/riwayat', [AdminController::class, 'riwayat'])->name('riwayat');
-        Route::get('/statuslab', [AdminController::class, 'statuslab'])->name('statuslab');
-        Route::get('/notifikasi', [AdminController::class, 'notifikasi'])->name('notifikasi');
-    });
+Route::middleware(['auth', 'role:Admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/akun', [AdminController::class, 'semuaAkun'])->name('akun');
+    Route::post('/delete/{nim_nip}', [AdminController::class, 'delete'])->name('delete');
+    Route::get('/riwayat', [AdminController::class, 'riwayat'])->name('riwayat');
+    Route::get('/statuslab', [AdminController::class, 'statuslab'])->name('statuslab');
+    Route::get('/notifikasi', [AdminController::class, 'notifikasi'])->name('notifikasi');
+});
 
 //ASLAB
-Route::middleware(['auth','role:Asisten Lab'])->prefix('aslab')->name('aslab.')->group(function(){
+Route::middleware(['auth', 'role:Asisten Lab'])->prefix('aslab')->name('aslab.')->group(function () {
     Route::get('/pengajuan', [AslabController::class, 'pengajuan'])->name('pengajuan');
     Route::get('/status-lab', [AslabController::class, 'statuslab'])->name('status-lab');
     Route::get('/jadwal-tetap', [AslabController::class, 'jadwaltetap'])->name('jadwal-tetap');
@@ -49,13 +49,17 @@ Route::get('/register', [RegisterController::class, 'form']);
 Route::post('/register', [RegisterController::class, 'registration']);
 
 // Login
-Route::get('/login', [LoginController::class, 'form']);
+// Route::get('/login', [LoginController::class, 'form']);
 
 // CRUD Lab
 
 Route::get('/login', [LoginController::class, 'form'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+//lupa password
+Route::get('/lupa-password', [LoginController::class, 'lupaForm']);
+Route::post('/lupa-password', [LoginController::class, 'lupaSubmit']);
 
 //Ganti role
 Route::post('/switch-role', [RoleSwitchController::class, 'switch'])->middleware('auth')->name('role.switch');
