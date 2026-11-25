@@ -20,6 +20,9 @@ Route::middleware(['auth', 'role:Admin'])->prefix('admin')->name('admin.')->grou
     Route::get('/riwayat', [AdminController::class, 'riwayat'])->name('riwayat');
     Route::get('/statuslab', [AdminController::class, 'statuslab'])->name('statuslab');
     Route::get('/notifikasi', [AdminController::class, 'notifikasi'])->name('notifikasi');
+    Route::post('/restore/{nim_nip}',[AdminController::class, 'restore'])->name('restore');
+    Route::get('/akun/edit/{nim_nip}',[AdminController::class, 'edit'])->name('akun.edit');
+    Route::put('/akun/{nim_nip}',[AdminController::class, 'update'])->name('akun.update');
 });
 
 //ASLAB

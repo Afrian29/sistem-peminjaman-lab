@@ -57,12 +57,17 @@
                                 </td>
                                 <td>{{$user->kelas_jurusan}}</td>
                                 <td>{{$user->no_wa}}</td>
-                                <td><form method="POST" action="{{ route('admin.delete', ['nim_nip'=>$user->nim_nip])}}"
+                                <td><div class="d-flex justify-content-center gap-2">
+                                    <form method="POST" action="{{ route('admin.delete', ['nim_nip'=>$user->nim_nip])}}"
                                     onsubmit="return confirm(@js('Yakin Ingin menghapus akun atas nama '.$user->name.'?'))">
                                     @csrf
                                     <button type="submit" class="btn btn-danger"><i class="bi bi-trash3"></i></button>
                                     </form>
-                                <a href="{{ url('/update-user/'.$user->nim_nip) }}"><button type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></button></a></td>
+                                    <form method="post" action="{{ route('admin.akun.edit', ['nim_nip'=>$user->nim_nip]) }}">
+                                    <button type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></button></a>
+                                    </form>    
+                                </div>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -115,7 +120,14 @@
                                 @endforeach</td>
                                 <td>{{$user->kelas_jurusan}}</td>
                                 <td>{{$user->no_wa}}</td>
-                                <td><a href="{{ url('/update-user/'.$user->nim_nip) }}"><button type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></button></a></td>
+                                <td><div class="d-flex justify-content-center">
+                                    <form method="POST" action="{{ route('admin.restore', ['nim_nip'=>$user->nim_nip])}}"
+                                    onsubmit="return confirm(@js('Yakin Ingin Memulihkan akun atas nama '.$user->name.'?'))">
+                                    @csrf
+                                    <button type="submit" class="btn btn-Warning" style="background-color: #01d057; !important"><i class="bi bi-arrow-repeat"></i></button>
+                                    </form>
+                                    </div>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
