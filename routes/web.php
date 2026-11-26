@@ -32,6 +32,7 @@ Route::middleware(['auth', 'role:Asisten Lab'])->prefix('aslab')->name('aslab.')
     Route::get('/jadwal-tetap', [AslabController::class, 'jadwaltetap'])->name('jadwal-tetap');
     Route::get('/riwayat-peminjaman', [AslabController::class, 'RiwayatPeminjaman'])->name('riwayat-peminjaman');
     Route::get('/akun', [AslabController::class, 'akun'])->name('akun');
+    // CRUD Lab
     route::resource('lab', LabController::class);
     Route::patch('/labs/{lab}/toggle', [LabController::class, 'toggle'])->name('labs.toggle');
 });
@@ -50,21 +51,16 @@ Route::middleware(['auth', 'role:Mahasiswa'])->prefix("mahasiswa")->name('mahasi
 // Register
 Route::get('/register', [RegisterController::class, 'form']);
 Route::post('/register', [RegisterController::class, 'registration']);
-
 // Login
-// Route::get('/login', [LoginController::class, 'form']);
-
-// CRUD Lab
-
 Route::get('/login', [LoginController::class, 'form'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
 //lupa password
 Route::get('/lupa-password', [LoginController::class, 'lupaForm']);
 Route::post('/lupa-password', [LoginController::class, 'lupaSubmit']);
 
-//Ganti role
+// Global
+//Ganti role    
 Route::post('/switch-role', [RoleSwitchController::class, 'switch'])->middleware('auth')->name('role.switch');
 
 
